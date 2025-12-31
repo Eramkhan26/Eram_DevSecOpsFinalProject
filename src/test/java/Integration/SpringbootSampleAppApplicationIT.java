@@ -24,4 +24,11 @@ class SpringbootSampleAppApplicationIT {
         String result = springbootSampleAppApplication.register("Mute");
         assertEquals("Please follow registration process...", result);
     }
+
+    @Test
+    void mainTest() {
+        SpringbootSampleAppApplication.main(new String[]{
+
+        });
+    }
 }
