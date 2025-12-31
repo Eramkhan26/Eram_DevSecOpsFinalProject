@@ -103,11 +103,11 @@ jobs:
           server-username: GITHUB_ACTOR
           server-password: GITHUB_TOKEN
 
-#      - name: Package JAR
-#        run: mvn package -DskipTests
-#
-#      - name: Publish JAR to GitHub Package Registry
-#        if: github.ref == 'refs/heads/main'
-#        run: mvn deploy
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Package JAR
+        run: mvn package -DskipTests
+
+      - name: Publish JAR to GitHub Package Registry
+        if: github.ref == 'refs/heads/main'
+        run: mvn deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -15,11 +15,16 @@ class SpringbootSampleAppApplicationTests {
          assertEquals("Please input your credentials for login...",res);
 	}
 
-
+    @Test
     void testRegisterUser() {
         SpringbootSampleAppApplication obj=new SpringbootSampleAppApplication();
         String res=obj.register("Mute");
         assertEquals("Please follow registration process...",res);
+    }
+    @Test
+    void mainTest() {
+        SpringbootSampleAppApplication.main(new String[]{
+        });
     }
 
 }
