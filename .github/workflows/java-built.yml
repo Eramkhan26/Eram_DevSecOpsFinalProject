@@ -133,6 +133,6 @@ jobs:
         run: | 
           echo "User name is ${{secrets.DB_USER}}"
           echo "User Password is ${{secrets.DB_PASSWORD}}"
-        evn:
+        env:
           DB_PASSWORD: ${{secrets.DB_PASSWORD}}
           DB_USERNAME: ${{secrets.DB_USER}}
