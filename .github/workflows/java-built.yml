@@ -111,3 +111,28 @@ jobs:
         run: mvn deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  show-variables:
+    name: Variables
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use variables
+        run: |
+          echo "Current State  is ${{ vars.CURRENTSTATE }}"
+          echo "State is ${{ vars.STATE }}"
+        env:
+          DB_PASSWORD: ${{ vars.ENV_CITY }}|
+
+  secrets:
+    name: Secrets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use secrets
+        run: | 
+          echo "User name is ${{secrets.DB_USER}}"
+          echo "User Password is ${{secrets.DB_PASSWORD}}"
+        evn:
+          DB_PASSWORD: ${{secrets.DB_PASSWORD}}
+          DB_USERNAME: ${{secrets.DB_USER}}
